@@ -1,0 +1,91 @@
+.main-view-element {
+    /* background-color: #607D8B; */
+    background-color: #000000;
+    text-align: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    background-color: #000000;
+    color: #1d1d1f;
+    font-style: normal;
+}
+
+canvas#main_canvas {
+    background-color: #000000;
+    display: block;
+}
+
+.investment-list-view {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.investment-list-view .investments-list {
+    padding: 150px 20px;
+    list-style: none;
+    /* grid-gap: 20px; */
+    display: grid;
+    max-width: 800px;
+    margin: auto;
+}
+
+.investment-list-view .investments-list .investment-object {
+    padding: 30px;
+    display: grid;
+    grid-gap: 20px;
+    border-bottom: 1px solid #312d2c;
+    
+}
+
+.investment-list-view .investments-list .investment-object:last-child {
+    border-bottom: none;
+  }
+
+.investment-object h3.name {
+    margin: 0;
+    color: #607d8b;
+}
+
+.investment-object .description {
+    color: #fff;
+    font-size: 90%;
+}
+.investment-object .type {
+    color: #9E9E9E;
+    font-size: 70%;
+}
+.investment-object .position {
+    color: #b9ffd88e;
+    font-size: 70%;
+}
+
+li.investment-object .change.red {
+    color: red;
+    font-size: 70%;
+}
+
+li.investment-object .change.green {
+    color: lime;
+    font-size: 70%;
+}
+
+li.investment-object .unrealised {
+    display: grid;
+    grid-auto-flow: column;
+    /* width:max-content; */
+    grid-gap:20px;
+}
+
+@media only screen and (max-width: 600px) {
+    li.investment-object .unrealised  {
+      grid-auto-flow: row;
+    }
+}

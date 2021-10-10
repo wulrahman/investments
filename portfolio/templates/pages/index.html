@@ -1,0 +1,28 @@
+{% load static %}
+{% include "pages/header.html" %}
+<div class="main-view-element">
+	<canvas id="main_canvas" width="1000" height="500"></canvas>
+</div>
+<div class="investment-list-view">
+	<ul class="investments-list">
+		{% for position in positions %}
+			<li  class="investment-object">
+				<h3 class="name">{{position.companyName}}</h3>
+				<div class="unrealised">
+					{% if position.change > 0 %}
+						<div class="change green">${{position.change}} {{position.percentage}}%</div>
+					{% else %}
+						<div class="change red">${{position.change}} {{position.percentage}}%</div>
+					{% endif %}
+					<div class="position">{{position.size}} Share at ${{position.price}}</div>
+					<div class="type">{{position.exchange}}: {{position.symbol}}</div>
+				</div>
+				<div class="description">{{position.description|truncatechars:255}}</div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+<script>
+var chart = {{chart|safe}}; 
+</script>
+{% include "pages/footer.html" %}
